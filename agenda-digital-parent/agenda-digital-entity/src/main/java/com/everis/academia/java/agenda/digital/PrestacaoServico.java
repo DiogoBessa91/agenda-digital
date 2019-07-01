@@ -1,34 +1,55 @@
 package com.everis.academia.java.agenda.digital;
 
-import java.sql.Date;
+import java.util.Date;
+import java.util.Set;
 
 public class PrestacaoServico {
-			
 
-		private Integer	codigo;
-		private Date data;
-
-		public PrestacaoServico(Date data, Integer codigo) {
-			super();
-			this.data = data;
-			this.codigo = codigo;
-		}
-		
-		public Date getData() {
-			return data;
-		}
-
-		public void setData(String data) {
-		}
-
-		public Integer getCodigo() {
-			return codigo;
-		}
-
-		public void setCodigo(Integer codigo) {
-		}
-			
+	private Integer codigo;
+	private Date date;
+	private PrestadorServico prestadores;
+	private Set<ServicoPrestado> servicosPrestados;
 	
+	public PrestacaoServico() {
+		
+		super();
+	}
+	
+	public PrestacaoServico(Integer codigo) {
+		
+		super();
+		this.codigo = codigo;
+	}
 
+	public Integer getCodigo() {
+		return codigo;
+	}
 
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public PrestadorServico getPrestador() {
+		return prestadores;
+	}
+
+	public void setPrestador(PrestadorServico prestador) {
+		this.prestadores = prestador;
+	}
+
+	public Set<ServicoPrestado> getServicoPrestado() {
+		return servicosPrestados;
+	}
+
+	public void setServicoPrestado(Set<ServicoPrestado> servicoPrestado) {
+		this.servicosPrestados = servicoPrestado;
+	}
 }
