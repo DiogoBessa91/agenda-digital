@@ -1,7 +1,9 @@
-package com.everis.academia.java.agenda.digital;
+package com.everis.academia.java.agenda.digital.entity;
 
 public class Cidade {
 	
+	
+	private int id;
 	private Integer codigo;
 	private String nome;
 	
@@ -10,6 +12,18 @@ public class Cidade {
 		super();
 	}
 	
+	 public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Cidade(int id) {
+	        this.id = id;
+	    }
+	 
 	public Cidade(Integer codigo) {
 		
 		this();

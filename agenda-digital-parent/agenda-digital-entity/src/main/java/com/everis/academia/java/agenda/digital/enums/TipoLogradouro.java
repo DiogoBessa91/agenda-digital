@@ -1,4 +1,4 @@
-package com.everis.academia.java.agenda.digital.logradouro;
+package com.everis.academia.java.agenda.digital.enums;
 
 public enum TipoLogradouro {
 	RUA,
