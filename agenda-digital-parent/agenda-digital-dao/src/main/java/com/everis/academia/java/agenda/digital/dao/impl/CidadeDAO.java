@@ -10,12 +10,19 @@ import com.everis.academia.java.agenda.digital.entity.Cidade;
 public class CidadeDAO implements ICidadeDAO {
 
 	private static final List<Cidade> cidades = new ArrayList<Cidade>();
-
+	
+	public static short id = 0;
+	
 	public CidadeDAO() {
 	}
 
 	@Override
 	public void create(Cidade cidade) {
+		
+		id++;
+		
+		cidade.setCodigo(id);
+		
 		cidades.add(cidade);
 	}
 

@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
 
 @WebFilter(filterName = "Filtro", urlPatterns = "/*")
 public class MeuFilho implements Filter {
@@ -29,9 +30,15 @@ public class MeuFilho implements Filter {
 //		String uri = ((HttpServletRequest) request).getRequestURI();
 //
 //		System.out.println("Tempo da requisição de " + uri + " demorou (ms): " + (tempoFinal - tempoInicial));
+		
+		String url = ((HttpServletRequest)request).getRequestURL().toString();
+		if (request instanceof HttpServletRequest) {
+			 String queryString = ((HttpServletRequest)request).getQueryString();
+			}
+	        System.out.println("Url: " + url);
+		
 		request.getParameterMap().forEach((key, value) -> {
-			System.out.println("Parametros recebidos: ");
-			System.out.println("Key: " + key + " | Value: " + Arrays.toString(value));
+			System.out.println("Parametros recebidos: Key= " + key + " | Value= " + Arrays.toString(value));
 		});
 		chain.doFilter(request, response);
 	}

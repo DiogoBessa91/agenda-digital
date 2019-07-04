@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.everis.academia.java.agenda.digital.business.ICidadeBusiness;
 import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 import com.everis.academia.java.agenda.digital.entity.Cidade;
-import com.everis.academia.java.agenda.digital.web.servlets.cidade.views.ListaCidades;
 
 @WebServlet(name="CidadeUpdateController", urlPatterns = "/CidadeUpdateController")
 public class CidadeUpdateController extends HttpServlet {

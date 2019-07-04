@@ -12,13 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 import com.everis.academia.java.agenda.digital.business.ICidadeBusiness;
 import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 import com.everis.academia.java.agenda.digital.entity.Cidade;
-import com.everis.academia.java.agenda.digital.web.servlets.cidade.views.ListaCidades;
+
 
 @WebServlet (name="CidadeRemoveController", urlPatterns = "/CidadeRemoveController")
 
 
 public class CidadeRemoveController extends HttpServlet {
 
+	private static final long serialVersionUID = 1L;
+	
 	ICidadeBusiness business = new CidadeBusiness();
 
 	@Override
