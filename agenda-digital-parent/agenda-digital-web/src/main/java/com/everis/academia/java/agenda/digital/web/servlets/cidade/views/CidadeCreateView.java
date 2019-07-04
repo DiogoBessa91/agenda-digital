@@ -34,7 +34,7 @@ public class CidadeCreateView extends HttpServlet {
 		
 
 
-		out.println("<form action=\"CreateController\">");
+		out.println("<form action=\"CidadeReadView\">");
 		out.println("<table style=\"background-color: skyblue; box-shadow: 5px 10px #888888; margin-top: 10%; border-radius: 3%\" border=\"5\" align='center'>");
 		out.println("<tr><td style='padding: 8px;'colspan=\"2\" align='center'>Adicionar Cidade</td></tr>");
 		out.println("<tr><td>Nome da Cidade:</td><td><input type=\"text\" name=\"nome\"/></td></tr>");

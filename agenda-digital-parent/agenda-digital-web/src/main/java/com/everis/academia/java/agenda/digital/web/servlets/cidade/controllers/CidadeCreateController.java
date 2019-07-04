@@ -9,6 +9,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import com.everis.academia.java.agenda.digital.business.ICidadeBusiness;
+import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 import com.everis.academia.java.agenda.digital.entity.Cidade;
 import com.everis.academia.java.agenda.digital.web.servlets.cidade.views.ListaCidades;
 
@@ -22,40 +24,31 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name="CreateController", urlPatterns = "/CreateController")
 public class CidadeCreateController extends HttpServlet {
 
+	private ICidadeBusiness business = new CidadeBusiness();
+
 	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		
-		PrintWriter writer = response.getWriter();
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-		
-		String nome = request.getParameter("nome");
-		
-		if (nome == null || nome.trim().isEmpty()) {
-			response.sendRedirect("create?msg=null");
-			return;
-		
-			
-		}		
-		
-		Integer id = ListaCidades.getCidades().size() + 1;
-		
-		for ( Object cidade : ListaCidades.getCidades()) {
-			Cidade o = (Cidade) cidade;
-			if (o.getCodigo() == id)
-				id++;
-		}
-					
-		Cidade cidade = new Cidade(id, ListaCidades.format(nome));
-		
-		if (ListaCidades.getCidades().contains(cidade)) {
-			response.sendRedirect("create?msg=contains");
-			return;
-		}
-		
-		ListaCidades.addCidade(cidade);
-		
-		writer.write("<p>Cidade adicionada!</p> <a href=\"CidadeCreateView\">Voltar</a> <p></p> <a href=\"CidadeReadView\">Lista Cidades</a>");
+		try {
+			// Recupera Parametros
+			String nome = request.getParameter("nome");
 
-		
+			// Cria Cidade
+			Cidade cidade = new Cidade();
+			cidade.setNome(nome);
+
+			// Adiciona Cidade
+			business.create(cidade);
+
+			// Imprime sucesso
+			PrintWriter writer = response.getWriter();
+			writer.write("<p>Cidade adicionada com sucesso.</p>" + " <a href=\"create\">Voltar</a> <p></p>"
+					+ " <a href=\"read\">Ver Tabela</a>");
+
+		} catch (Exception e) {
+			throw new ServletException(e);
+		}
+
 	}
 }

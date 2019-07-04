@@ -51,4 +51,9 @@ public class Cidade {
 	public String getNome() {
 		return nome;
 	}
+
+	public String trim() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

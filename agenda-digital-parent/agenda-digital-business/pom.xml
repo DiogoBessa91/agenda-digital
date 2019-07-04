@@ -13,7 +13,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.everis.academia.java</groupId>
-			<artifactId>agenda-digital-entity</artifactId>
+			<artifactId>agenda-digital-dao</artifactId>
 		</dependency>
 	</dependencies>
 </project>

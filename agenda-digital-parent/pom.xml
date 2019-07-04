@@ -44,6 +44,11 @@
 				<artifactId>agenda-digital-dao</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
+			<dependency>
+				<groupId>com.everis.academia.java</groupId>
+				<artifactId>agenda-digital-business</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 </project>
