@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="<%=request.getContextPath()%>/CidadeReadView">
+	<form action="<%=request.getContextPath()%>/jsp/cidade/readcidade.jsp">
 
-		<table style= "background-color: skyblue; box-shadow: 5px 10px #888888;" margin-top= 50% ; border-radius= 3% ; border= 5 ; align='center'>
+		<table style= "margin-top: 10% ; background-color: skyblue; box-shadow: 5px 10px #888888;"  border-radius= 3% ; border= 5 ; align='center'>
 			<tr>
 				<td style='padding: 8px;' colspan=2 align='center'>Adicionar Cidade</td>
 			</tr>

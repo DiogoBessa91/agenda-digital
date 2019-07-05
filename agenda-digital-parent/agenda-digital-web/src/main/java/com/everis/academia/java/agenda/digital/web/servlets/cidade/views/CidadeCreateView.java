@@ -3,11 +3,14 @@ package com.everis.academia.java.agenda.digital.web.servlets.cidade.views;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.faces.bean.ManagedBean;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+@ManagedBean(name = "CidadeCreateView")
 
 @WebServlet (name="CidadeCreateView", urlPatterns="/CidadeCreateView")
 public class CidadeCreateView extends HttpServlet {

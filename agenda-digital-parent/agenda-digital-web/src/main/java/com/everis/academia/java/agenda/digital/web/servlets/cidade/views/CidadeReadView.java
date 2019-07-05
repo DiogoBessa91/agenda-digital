@@ -47,11 +47,11 @@ public class CidadeReadView extends HttpServlet {
 		
 		business.sortByName();
 
-		for (Object cidade1 : business.read()) {
+		for (Cidade cidade1 : business.read()) {
 			out.println("<td>" + ((Cidade) cidade1).getCodigo() + "</td>");
 			out.println("<td>" + ((Cidade) cidade1).getNome() +"</td>");
-			out.println("<td style=\"background-color: crimson; box-shadow: 3px 2px #5555; height: 25px; border-radius: 10%\"><a style=\"text-decoration: none; color: black\" href=\"remove?id=" + ((Cidade) cidade1).getCodigo() + "&nome=" + ((Cidade) cidade).getNome() + "\">Remover</a></td>");
-			out.println("<td style=\"background-color: darkseagreen; box-shadow: 3px 2px #5555; height: 25px; border-radius: 10%\"><a style=\"text-decoration: none; color: black\" href=\"update?id=" + ((Cidade) cidade1).getCodigo() + "&nome=" + ((Cidade) cidade).getNome() + "\">Update</a></td></tr>");
+			out.println("<td style=\"background-color: crimson; box-shadow: 3px 2px #5555; height: 25px; border-radius: 10%\"><a style=\"text-decoration: none; color: black\" href=\"remove?id=" + ((Cidade) cidade1).getCodigo() + ((Cidade) cidade1).getNome() + "\">Remover</a></td>");
+			out.println("<td style=\"background-color: darkseagreen; box-shadow: 3px 2px #5555; height: 25px; border-radius: 10%\"><a style=\"text-decoration: none; color: black\" href=\"update?id=" + ((Cidade) cidade1).getCodigo() + ((Cidade) cidade1).getNome() + "\">Update</a></td></tr>");
 			
 		}
 		
