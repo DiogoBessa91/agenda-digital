@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Cidades View</title>
+</h:head>
+<h:body>
+	<h:dataTable value="#{cidadeRead.cidades}" var="cidade" cellspacing="1"
+		border="1" id="dataTable">
+		<h:column>
+			<f:facet name="header">Codigo</f:facet>
+			<h:outputLabel align="center">#{cidade.codigo}</h:outputLabel>
+		</h:column>
+		<h:column>
+			<f:facet name="header">Nome</f:facet>
+			<h:outputLabel>#{cidade.nome}</h:outputLabel>
+		</h:column>
+		<h:column>
+			<h:form align="center">
+				<f:facet name="header"></f:facet>
+				<h:commandLink value="Update"
+					action="#{cidadeUpdate.call(cidade)}" />
+			</h:form>
+		</h:column>
+		<h:column>
+			<h:form align="center">
+				<h:commandLink value="Delete"
+					action="#{cidadeDelete.delete(cidade.codigo)}" />
+			</h:form>
+		</h:column>
+	</h:dataTable>
+	<h:messages for="dataTable" showSummary="true" showDetail="true"></h:messages>
+<h:form align="center">
+	<h:commandButton value="Create" action="#{cidadeCreate.call()}" />
+</h:form>
+</h:body>
+</html>

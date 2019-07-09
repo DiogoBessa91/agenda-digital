@@ -25,7 +25,6 @@ public class CidadeBusiness implements ICidadeBusiness {
 
 	@Override
 	public void update(Cidade cidade) throws BusinessException {
-		validaNome(cidade.getNome());
 		cidadeDAO.update(cidade);
 	}
 
@@ -43,7 +42,6 @@ public class CidadeBusiness implements ICidadeBusiness {
 	@Override
 	public Boolean delete(String nome) throws BusinessException {
 		
-		validaNome(nome);
 		return cidadeDAO.delete(nome);
 	}
 

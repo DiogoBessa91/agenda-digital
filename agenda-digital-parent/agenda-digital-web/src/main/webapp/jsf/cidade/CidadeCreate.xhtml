@@ -1,34 +1,21 @@
-
-
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-	<title>Academia Java 2019</title>
+	<title>Cidade Create</title>
 </h:head>
 <h:body>
-	<h:dataTable
-		style="background-color: skyblue; box-shadow: 5px 10px
-		#888888; margin-top: 10%; border-radius: 3%"
-		border="5" align='center'>
+	<h:form>
+		<h:panelGrid box-shadow= "5px 10px #888888" margin-top= "10%" border-radius= "3%" border="5" align='center' columns="2">
+			<h:outputLabel for="nome" value="Nome: " />
+			<h:inputText id="nome" value="#{cidadeCreate.cidade.nome}" />
 
-			<f:facet name="header">Adicionar Cidade</f:facet>
-			<h:inputText type="text" name="nome"/>
-		<h:column>
-			<f:facet name="header">Nome da Cidade:</f:facet>
-		</h:column>
-		<h:column>
-			<h:inputText id="nome" value="#{CidadeCreateView.nome}" />
-		</h:column>
-			<f:facet name="footer">
-				<h:commandButton
-					style="background-color: gold; box-shadow: 3px 2px #5555; height: 25px; border-radius: 10%"
-					 action="#{CidadeCreateView.submit}" value="Enviar" />
-				<h:commandButton
-					style="background-color: gold; box-shadow: 3px 2px #5555; height: 25px;border-radius: 10%"
-					ction="#{CidadeCreateView.reset}" value="Limpar" />
-			</f:facet>
-	</h:dataTable>
+			<h:panelGroup align="center">
+				<h:commandButton value="Enviar" type="submit" action="#{cidadeCreate.create()}"/>
+				<h:commandButton type="reset" value="Limpar" action="#{cidadeCreate.clean()}"/>
+			</h:panelGroup>
+		</h:panelGrid>
+		<h:messages for="nome" showSummary="true" showDetail="true"></h:messages>
+	</h:form>
 </h:body>
 </html>
