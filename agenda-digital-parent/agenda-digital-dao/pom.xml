@@ -16,5 +16,16 @@
 			<groupId>com.everis.academia.java</groupId>
 			<artifactId>agenda-digital-entity</artifactId>
 		</dependency>
+		
+		<!-- configurçao minima para utilizar o spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+
 	</dependencies>
 </project>

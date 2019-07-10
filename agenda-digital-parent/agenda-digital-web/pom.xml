@@ -44,6 +44,12 @@
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>jaxws-rt</artifactId>
 		</dependency>
+		
+		<!-- permitir uma facil integraçao entre 2 frameworks(JSF + Spring) -->
+			<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
