@@ -6,10 +6,10 @@ import java.util.List;
 
 import javax.xml.ws.Holder;
 
-import com.everis.academia.java.agenda.digital.entity.Cidade;
-import com.everis.academia.java.agenda.digital.web.servlets.cidade.soap.CidadeSOAP;
-import com.everis.academia.java.agenda.digital.web.servlets.cidade.soap.CidadeSOAPService;
-import com.everis.academia.java.agenda.digital.business.BusinessException;
+import com.everis.academia.java.agenda.digital.web.soap.generated.Cidade;
+import com.everis.academia.java.agenda.digital.web.soap.generated.CidadeSOAP;
+import com.everis.academia.java.agenda.digital.web.soap.generated.CidadeSOAPService;
+import com.everis.academia.java.agenda.digital.web.soap.generated.BusinessException_Exception;
 
 public class SOAPmain {
 
@@ -32,7 +32,7 @@ public class SOAPmain {
 		System.out.println();
 		read(port);
 		System.out.println();
-		delete(port, cidade.getCodigo());
+		delete(port, cidade.getNome());
 		System.out.println();
 		read(port);
 	}
@@ -58,8 +58,8 @@ public class SOAPmain {
 		System.out.println("Updated!");
 	}
 
-	private static void delete(CidadeSOAP port, Integer codigo) throws BusinessException_Exception {
-		port.delete(codigo);
+	private static void delete(CidadeSOAP port, String nome) throws BusinessException_Exception {
+		port.delete(nome);
 		System.out.println("Deleted!");
 	}
 }
